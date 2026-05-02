@@ -2,11 +2,11 @@
 name = "sdtui"
 version = "0.1.0"
 edition = "2024"
-authors = ["Abhijeet Mohanan <https://github.com/abhijeetmohananvai>"]
+authors = ["Abhijeet Mohanan <https://github.com/abhijeetmohanan>"]
 description = "A high-performance TUI for managing systemd user and system units with live logs."
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/abhijeetmohananvai/sdtui"
-homepage = "https://github.com/abhijeetmohananvai/sdtui"
+repository = "https://github.com/abhijeetmohanan/sdtui"
+homepage = "https://github.com/abhijeetmohanan/sdtui"
 readme = "README.md"
 keywords = ["systemd", "tui", "linux", "logs", "service-manager"]
 categories = ["command-line-utilities", "system-administration"]

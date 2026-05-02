@@ -2,7 +2,7 @@
 
 **sdtui** is a high-performance Terminal User Interface (TUI) written in Rust for managing both user-level and system-wide systemd units. It prioritizes speed, clean aesthetics, and deep log integration, providing a modern alternative to standard `systemctl` commands.
 
-![sdtui Screenshot](https://raw.githubusercontent.com/abhijeetmohananvai/sdtui/master/screenshot.png) *(Note: Add a real screenshot link here)*
+![sdtui Screenshot](https://raw.githubusercontent.com/abhijeetmohanan/sdtui/master/screenshot.png) *(Note: Add a real screenshot link here)*
 
 ## Features
 
@@ -44,7 +44,7 @@
 
 ### From Source
 ```bash
-git clone https://github.com/abhijeetmohananvai/sdtui.git
+git clone https://github.com/abhijeetmohanan/sdtui.git
 cd sdtui
 cargo build --release
 ```
