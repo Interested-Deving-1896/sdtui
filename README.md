@@ -1,7 +1,7 @@
 # sdtui 🚀
 
 [![codecov](https://codecov.io/github/abhijeetmohanan/sdtui/graph/badge.svg?token=HUYG0XS5QV)](https://codecov.io/github/abhijeetmohanan/sdtui)
-[![asciicast](https://asciinema.org/a/vBv5O9X8Bv5O9X8Bv5O9X8Bv5.svg)](https://asciinema.org/a/vBv5O9X8Bv5O9X8Bv5O9X8Bv5)
+[![asciicast](https://asciinema.org/a/DPpzRcXw3hOmiNNK.svg)](https://asciinema.org/a/DPpzRcXw3hOmiNNK)
 
 **sdtui** is a high-performance Terminal User Interface (TUI) written in Rust for managing both user-level and system-wide systemd units. It prioritizes speed, clean aesthetics, and deep log integration.
 
