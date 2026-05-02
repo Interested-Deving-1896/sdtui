@@ -144,6 +144,7 @@ struct App {
     log_scroll: u16,
     auto_scroll: bool,
     last_nav_time: Instant,
+    should_quit: bool,
 }
 
 impl App {
@@ -177,6 +178,7 @@ impl App {
             log_scroll: 0,
             auto_scroll: true,
             last_nav_time: Instant::now(),
+            should_quit: false,
         };
         app.request_refresh();
         app
@@ -564,7 +566,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 
 fn run_app<B: Backend + io::Write>(terminal: &mut Terminal<B>, app: &mut App) -> Result<(), Box<dyn Error>> {
-    loop {
+    while !app.should_quit {
         app.check_for_updates();
         terminal.draw(|f| ui(f, app)).map_err(|e| io::Error::new(io::ErrorKind::Other, e.to_string()))?;
 
@@ -576,6 +578,7 @@ fn run_app<B: Backend + io::Write>(terminal: &mut Terminal<B>, app: &mut App) ->
             }
         }
     }
+    Ok(())
 }
 
 fn handle_key_event<B: Backend + io::Write>(terminal: &mut Terminal<B>, app: &mut App, key: event::KeyEvent) -> Result<(), Box<dyn Error>> {
@@ -640,7 +643,7 @@ fn handle_key_event<B: Backend + io::Write>(terminal: &mut Terminal<B>, app: &mu
         }
     } else {
         match key.code {
-            KeyCode::Char('q') => { std::process::exit(0); }
+            KeyCode::Char('q') => { app.should_quit = true; }
             KeyCode::Char('?') => app.show_help = true,
             KeyCode::Char('l') => { app.show_full_logs = true; app.auto_scroll = true; app.request_logs(); }
             KeyCode::Esc => { if !app.search_query.is_empty() { app.search_query.clear(); app.ensure_selection_in_bounds(); app.request_logs(); } }
