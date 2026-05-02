@@ -1,1 +1,4 @@
 /target
+**/*.rs.bk
+debug_output.txt
+*.log
