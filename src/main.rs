@@ -793,3 +793,61 @@ fn centered_rect(percent_x: u16, percent_y: u16, r: Rect) -> Rect {
     let popup_layout = Layout::default().direction(Direction::Vertical).constraints([Constraint::Percentage((100 - percent_y) / 2), Constraint::Percentage(percent_y), Constraint::Percentage((100 - percent_y) / 2),].as_ref()).split(r);
     Layout::default().direction(Direction::Horizontal).constraints([Constraint::Percentage((100 - percent_x) / 2), Constraint::Percentage(percent_x), Constraint::Percentage((100 - percent_x) / 2),].as_ref()).split(popup_layout[1])[1]
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::sync::mpsc;
+
+    #[test]
+    fn test_unit_type_methods() {
+        assert_eq!(UnitType::Service.extension(), ".service");
+        assert_eq!(UnitType::Service.label(), "Services");
+        
+        assert_eq!(UnitType::Socket.extension(), ".socket");
+        assert_eq!(UnitType::Socket.label(), "Sockets");
+    }
+
+    #[test]
+    fn test_highlight_text() {
+        let line = highlight_text("docker.service loaded active", "");
+        assert_eq!(line.width(), 28);
+        
+        let line = highlight_text("docker.service loaded active", "docker");
+        assert_eq!(line.width(), 28); 
+    }
+
+    fn create_test_app() -> App {
+        let (worker_tx, _) = mpsc::channel();
+        let (_, main_rx) = mpsc::channel();
+        App::new(worker_tx, main_rx)
+    }
+
+    #[test]
+    fn test_app_filtering_and_selection() {
+        let mut app = create_test_app();
+        app.user_services = vec![
+            ServiceUnit { name: "test.service".into(), load: "".into(), active: "".into(), sub: "".into(), description: "".into() },
+            ServiceUnit { name: "test.socket".into(), load: "".into(), active: "".into(), sub: "".into(), description: "".into() },
+        ];
+        
+        app.view_mode = ViewMode::User;
+        
+        // Default filter is Service
+        app.active_filters = vec![UnitType::Service];
+        app.search_query = "".to_string();
+        
+        let filtered = app.get_filtered_services(app.view_mode);
+        assert_eq!(filtered.len(), 1);
+        assert_eq!(filtered[0].name, "test.service");
+        
+        // Test search combined with multiple filters
+        app.active_filters = vec![UnitType::Service, UnitType::Socket];
+        app.search_query = "socket".to_string();
+        
+        let filtered = app.get_filtered_services(app.view_mode);
+        assert_eq!(filtered.len(), 1);
+        assert_eq!(filtered[0].name, "test.socket");
+    }
+}
+
