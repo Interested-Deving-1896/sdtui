@@ -1,3 +1,11 @@
+```text
+   ____   ____    _____   _   _  ___ 
+  / ___| |  _ \  |_   _| | | | ||_ _|
+  \___ \ | | | |   | |   | | | | | | 
+   ___) || |_| |   | |   | |_| | | | 
+  |____/ |____/    |_|    \___/ |___|
+```
+
 # sdtui
 
 [![codecov](https://codecov.io/github/abhijeetmohanan/sdtui/graph/badge.svg?token=HUYG0XS5QV)](https://codecov.io/github/abhijeetmohanan/sdtui)
