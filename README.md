@@ -1,69 +1,75 @@
-# sdtui 🚀
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# sdtui
 
-[![codecov](https://codecov.io/github/abhijeetmohanan/sdtui/graph/badge.svg?token=HUYG0XS5QV)](https://codecov.io/github/abhijeetmohanan/sdtui) [![asciicast](https://asciinema.org/a/DPpzRcXw3hOmiNNK.svg)](https://asciinema.org/a/DPpzRcXw3hOmiNNK)
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/sdtui)
 
-**sdtui** is a high-performance Terminal User Interface (TUI) written in Rust for managing both user-level and system-wide systemd units. It prioritizes speed, clean aesthetics, and deep log integration.
-n## 📺 Demo
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-![sdtui demo](demo.gif)
+## Architecture
 
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-## Features
+## Install
 
-- **Multi-threaded Engine**: Background worker for non-blocking system queries and log fetching.
-- **Dual-View Mode**: Instant switching between Local User and Full System views.
-- **Live Log Streaming**: Real-time journal viewing with automatic text wrapping.
-- **Smart Tailing**: Auto-scrolls to the latest logs, with the ability to pause and scroll manually.
-- **Regex Highlighting**: Highlight specific terms in logs using regex patterns.
-- **Interactive Action Menu**: Start, stop, enable, disable, and edit units with a single key or a menu.
-- **Multi-select Filtering**: Filter unit types (Services, Sockets, Targets, etc.) dynamically.
-- **Fuzzy Search**: Find units instantly by name or description.
-- **Robust Terminal Handoff**: Safely handles `sudo` prompts and external editors without breaking the TUI.
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-## Keybindings
-
-| Key | Action |
-|-----|--------|
-| `Tab` | Switch between User and System modes |
-| `s` | Smart Toggle (Start/Stop) |
-| `Enter` | Open Selection Menu |
-| `/` | Start Search |
-| `f` | Toggle Unit Type Filters |
-| `l` | Open Full-Screen Log View |
-| `?` | Toggle Help Modal |
-| `j`/`k` | Move Selection / Scroll Logs |
-| `PgUp`/`PgDn` | Fast Scroll / Jump |
-| `G` | Snap to Bottom (Resume Tailing) |
-| `g` | Snap to Top |
-| `q` / `Esc` | Quit / Close Modals |
-
-### Log View Actions
-| Key | Action |
-|-----|--------|
-| `h` | Enter Regex for Highlighting |
-| `c` | Clear Highlighting |
-| `l` / `Esc` | Close Log View |
-
-## Installation
-
-### From Source
 ```bash
-git clone https://github.com/abhijeetmohanan/sdtui.git
+git clone https://github.com/Interested-Deving-1896/sdtui.git
 cd sdtui
-cargo build --release
 ```
-The binary will be available at `./target/release/sdtui`.
 
-## Requirements
+## Usage
 
-- **OS**: Linux (with `systemd`)
-- **Dependencies**: `systemctl`, `journalctl`, `sudo` (for system-wide actions)
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
+
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/sdtui`](https://github.com/Interested-Deving-1896/sdtui) and mirrored through:
+
+```
+Interested-Deving-1896/sdtui  ──►  OpenOS-Project-OSP/sdtui  ──►  OpenOS-Project-Ecosystem-OOC/sdtui
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
 
 ## License
 
-This project is licensed under either of:
-
-- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
-at your option.
+<!-- AI:start:license -->
+[Apache-2.0](https://github.com/Interested-Deving-1896/sdtui/blob/master/LICENSE-APACHE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
